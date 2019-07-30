@@ -1,0 +1,18 @@
+<%# <%= render 'form', task: @task %>
+
+<% if @task.errors.any? %>
+  There's some errors.
+<% end %>
+
+<%= form_for(@task) do |task_form| %>
+  <%= task_form.label :title %>
+  <%= task_form.text_field :title %>
+
+  <%= task_form.label :details %>
+  <%= task_form.text_field :details %>
+
+  <%= task_form.label :completed %>
+  <%= task_form.check_box :completed %>
+
+  <%= task_form.submit %>
+<% end %>
